@@ -1,0 +1,55 @@
+.page, .product {
+    background: #fff;
+    padding: 1rem;
+
+    .product {
+        &-container {
+            width: 80%;
+            margin: auto;
+        }
+        &-details {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            
+        }
+        &Info {
+            h1 {
+                font-weight: 800;
+                font-size: 32px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__options {
+            &--grid-sm {
+                margin-block: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: start;
+                align-items: center;
+                gap: 1rem;
+
+                .options-sm {
+                    max-width: 100px;
+                    border-radius: 8px;
+                }
+
+                .active {
+                    border: 1px solid #000;
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        &__actions {
+            &--addToCart {
+                background: $main-color;
+                color: #fff;
+                border-radius: 8px;
+                padding: 1rem;
+            }
+        }
+        
+    }
+}
+

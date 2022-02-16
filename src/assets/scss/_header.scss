@@ -1,0 +1,27 @@
+.header {
+    background: #fff;
+    padding: 2rem;
+    min-height: 40px;
+    &__grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    &__left {
+        img {
+            width: 30%;
+        }
+    }
+    &__right {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        text-transform: uppercase;
+        ul {
+            list-style: none;
+            li {
+                display: inline;
+                margin-right: 2rem;
+            }
+        }
+    }
+}
