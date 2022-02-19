@@ -41,12 +41,23 @@ class ShopProvider extends Component {
 
     }
 
-    addItemToCheckout = async () => {
+    addItemToCheckout = async (variantId, quantity) => {
+        const lineItemsToAdd = [
+            {
+                variantId,
+                quantity: parseInt(quantity, 10)
+            }
+        ]
 
+        const checkout = await client.checkout.addLineItems(this.state.checkout.id, lineItemsToAdd)
+        this.setState({ checkout: checkout })
+
+        this.openCart()
     }
 
     removeLineItem = async (lineItemIdsToRemove) => {
-
+        const checkout = await client.checkout.removeLineItems(this.state.checkout.id, lineItemIdsToRemove)
+        this.setState({ checkout: checkout })
     }
 
     fetchAllProducts = async () => {
@@ -60,11 +71,11 @@ class ShopProvider extends Component {
     }
 
     closeCart = () => {
-
+        this.setState({ isCartOpen: false })
     }
 
     openCart = () => {
-
+        this.setState({ isCartOpen: true })
     }
 
     closeMenu = () => {
@@ -75,25 +86,35 @@ class ShopProvider extends Component {
 
     }
 
+    updateLineItems = async (variantId, quantity) => {
+        const lineItemsToUpdate = [
+            {
+                id: variantId,
+                quantity: parseInt(quantity, 10)
+            }
+          ];
+        const checkout = await client.checkout.updateLineItems(this.state.checkout.id, lineItemsToUpdate);
+        this.setState({ checkout: checkout })
+    }
+
     render() {
 
-        console.log(this.state.checkout)
-
         return (
-            <ShopContext.Provider 
-            value={{
-                ...this.state, 
-                fetchAllProducts: this.fetchAllProducts,
-                fetchCheckout: this.fetchCheckout,
-                fetchProductWithHandle: this.fetchProductWithHandle,
-                createCheckout: this.createCheckout,
-                openCart: this.openCart,
-                openMenu: this.openMenu,
-                closeCart: this.closeCart,
-                closeMenu: this.closeMenu,
-                removeLineItem: this.removeLineItem,
-                addItemToCheckout: this.addItemToCheckout
-            }}>
+            <ShopContext.Provider
+                value={{
+                    ...this.state,
+                    fetchAllProducts: this.fetchAllProducts,
+                    fetchCheckout: this.fetchCheckout,
+                    fetchProductWithHandle: this.fetchProductWithHandle,
+                    createCheckout: this.createCheckout,
+                    openCart: this.openCart,
+                    openMenu: this.openMenu,
+                    closeCart: this.closeCart,
+                    closeMenu: this.closeMenu,
+                    removeLineItem: this.removeLineItem,
+                    addItemToCheckout: this.addItemToCheckout,
+                    updateLineItems: this.updateLineItems
+                }}>
                 {this.props.children}
             </ShopContext.Provider>
         )

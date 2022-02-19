@@ -1,0 +1,46 @@
+.minicartItem {
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
+
+    &__imageContainer {
+        img {
+            border-radius: 4px;
+        }
+    }
+
+    &__infoContainer {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+    &__action--quantity {
+        border: 1px solid #000;
+        border-radius: 4px;
+        width: fit-content;
+        svg {
+            font-size:20px;
+        }
+        span {
+            padding: 0 0.5rem;
+        }
+    }
+
+    &__action--remove {
+        display: flex;
+        justify-content: start;
+    }
+
+}
+
+.minicartUpsell {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

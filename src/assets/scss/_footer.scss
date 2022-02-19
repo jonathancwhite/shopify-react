@@ -1,0 +1,18 @@
+.footer {
+    min-height: 20vh;
+    background: $main-color;
+    &-grid {
+        display: grid;
+        grid-template-columns: 30% 30% 40%;
+        padding: 1rem;
+        width: 80%;
+        margin: auto;
+    }
+    &-left, &-middle {
+        h2 {
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}

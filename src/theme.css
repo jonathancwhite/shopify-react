@@ -25,6 +25,64 @@
   margin-right: 2rem;
 }
 
+.footer {
+  min-height: 20vh;
+  background: #2a2e40;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 30% 30% 40%;
+  padding: 1rem;
+  width: 80%;
+  margin: auto;
+}
+.footer-left h2, .footer-middle h2 {
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.minicartItem {
+  display: grid;
+  grid-template-columns: 20% 70% 10%;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+.minicartItem__imageContainer img {
+  border-radius: 4px;
+}
+.minicartItem__infoContainer {
+  display: flex;
+  flex-direction: column;
+}
+.minicartItem__infoContainer h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.minicartItem__infoContainer p {
+  margin-bottom: 1rem;
+}
+.minicartItem__action--quantity {
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: fit-content;
+}
+.minicartItem__action--quantity svg {
+  font-size: 20px;
+}
+.minicartItem__action--quantity span {
+  padding: 0 0.5rem;
+}
+.minicartItem__action--remove {
+  display: flex;
+  justify-content: start;
+}
+
+.minicartUpsell {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -101,9 +159,12 @@
   display: grid;
   grid-template-columns: 50% 50%;
 }
+.page .productInfo, .product .productInfo {
+  padding-left: 2rem;
+}
 .page .productInfo h1, .product .productInfo h1 {
   font-weight: 800;
-  font-size: 32px;
+  font-size: 24px;
   margin-bottom: 1rem;
 }
 .page .product__options--grid-sm, .product .product__options--grid-sm {
@@ -115,18 +176,23 @@
   gap: 1rem;
 }
 .page .product__options--grid-sm .options-sm, .product .product__options--grid-sm .options-sm {
-  max-width: 100px;
+  max-width: min(70px, 40%);
   border-radius: 8px;
+}
+.page .product__options--grid-sm .options-sm:hover, .product .product__options--grid-sm .options-sm:hover {
+  border: 1px solid #000;
 }
 .page .product__options--grid-sm .active, .product .product__options--grid-sm .active {
   border: 1px solid #000;
-  border-radius: 8px;
 }
 .page .product__actions--addToCart, .product .product__actions--addToCart {
   background: #2a2e40;
   color: #fff;
   border-radius: 8px;
   padding: 1rem;
+}
+.page .product-description, .product .product-description {
+  padding-top: 2rem;
 }
 
 /*# sourceMappingURL=theme.css.map */

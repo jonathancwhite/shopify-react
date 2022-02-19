@@ -10,12 +10,12 @@
         &-details {
             display: grid;
             grid-template-columns: 50% 50%;
-            
         }
         &Info {
+            padding-left: 2rem;
             h1 {
                 font-weight: 800;
-                font-size: 32px;
+                font-size: 24px;
                 margin-bottom: 1rem;
             }
         }
@@ -30,13 +30,15 @@
                 gap: 1rem;
 
                 .options-sm {
-                    max-width: 100px;
+                    max-width: min(70px, 40%);
                     border-radius: 8px;
+                    &:hover {
+                        border: 1px solid #000;
+                    }
                 }
 
                 .active {
                     border: 1px solid #000;
-                    border-radius: 8px;
                 }
             }
         }
@@ -48,6 +50,10 @@
                 border-radius: 8px;
                 padding: 1rem;
             }
+        }
+
+        &-description {
+            padding-top: 2rem;
         }
         
     }

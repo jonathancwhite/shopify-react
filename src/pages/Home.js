@@ -12,29 +12,12 @@ const Home = () => {
 
     useEffect(() => {
         fetchAllProducts();
+        document.title = `Ballistic Agency - Optimized Ecommerce`
     }, [fetchAllProducts])
 
     if (!products) return <div>Loading...</div>
 
     console.log(products);
-
-    // <Box>
-    //     <Grid templateColumns="repeat(3, 1fr)">
-    //         {
-    //             products.map(product => (
-    //                 <Link to={`/products/${product.handle}`} key={product.id}>
-    //                     <Image src={product.images[0].src} />
-    //                     <Text>
-    //                         {product.title}
-    //                     </Text>
-    //                     <Text>
-    //                         ${product.variants[0].price}
-    //                     </Text>
-    //                 </Link>
-    //             ))
-    //         }
-    //     </Grid>
-    // </Box>
 
     return (
         <>
@@ -54,7 +37,6 @@ const Home = () => {
                 </div>
             </div>
             <div className="products">
-                {/* <h2>Products</h2> */}
                 <div className="products_grid">
                     {
                         products.map(product => (
